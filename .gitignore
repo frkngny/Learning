@@ -13,4 +13,6 @@
 
 .gitkeep
 
+# Python files and folders
 Pipfile*
+__pycache__/
