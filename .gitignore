@@ -16,3 +16,4 @@
 # Python files and folders
 Pipfile*
 __pycache__/
+venv/
