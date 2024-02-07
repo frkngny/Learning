@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+{{ customer_record.created_at }}
+
+<div class="card" style="width: 18rem;">
+    <img src="{% static 'furkan.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><strong>{{ customer_record.first_name }} {{ customer_record.last_name }}</strong></h5>
+      <p class="card-text">{{ customer_record.email }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ customer_record.phone }}</li>
+      <li class="list-group-item">{{ customer_record.address }} - {{ customer_record.zipcode }} - {{ customer_record.state }}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">{{ customer_record.city }}</a>
+      <a href="#" class="btn btn-primary">{{ customer_record.id }}</a>
+    </div>
+</div>
+<br><br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update</a>
+
+{% endblock %}
